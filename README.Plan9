@@ -1,0 +1,3 @@
+Bitfields removed in struct utf8proc_property_struct.
+Removed an apostrophe (') in a the c++ style comment (//) on line 299
+that caused weired errors.
