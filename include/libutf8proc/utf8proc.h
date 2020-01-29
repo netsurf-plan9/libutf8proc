@@ -256,24 +256,24 @@ typedef struct utf8proc_property_struct {
   utf8proc_uint16_t lowercase_seqindex;
   utf8proc_uint16_t titlecase_seqindex;
   utf8proc_uint16_t comb_index;
-  unsigned bidi_mirrored:1;
-  unsigned comp_exclusion:1;
+  utf8proc_uint8_t bidi_mirrored;
+  utf8proc_uint8_t comp_exclusion;
   /**
    * Can this codepoint be ignored?
    *
    * Used by @ref utf8proc_decompose_char when @ref UTF8PROC_IGNORE is
    * passed as an option.
    */
-  unsigned ignorable:1;
-  unsigned control_boundary:1;
+  utf8proc_uint8_t ignorable;
+  utf8proc_uint8_t control_boundary;
   /** The width of the codepoint. */
-  unsigned charwidth:2;
-  unsigned pad:2;
+  utf8proc_uint8_t charwidth;
+  utf8proc_uint8_t pad;
   /**
    * Boundclass.
    * @see utf8proc_boundclass_t.
    */
-  unsigned boundclass:8;
+  utf8proc_uint8_t boundclass;
 } utf8proc_property_t;
 
 /** Unicode categories. */
@@ -719,3 +719,4 @@ UTF8PROC_DLLEXPORT utf8proc_uint8_t *utf8proc_NFKC_Casefold(const utf8proc_uint8
 #endif
 
 #endif
+
