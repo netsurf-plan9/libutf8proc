@@ -296,7 +296,7 @@ static utf8proc_bool grapheme_break_extended(int lbc, int tbc, utf8proc_int32_t 
   if (state) {
     // Special support for GB 12/13 made possible by GB999. After two RI
     // class codepoints we want to force a break. Do this by resetting the
-    // second RI:s bound class to UTF8PROC_BOUNDCLASS_OTHER, to force a break
+    // second RI's bound class to UTF8PROC_BOUNDCLASS_OTHER, to force a break
     // after that character according to GB999 (unless of course such a break is
     // forbidden by a different rule such as GB9).
     if (*state == tbc && tbc == UTF8PROC_BOUNDCLASS_REGIONAL_INDICATOR)

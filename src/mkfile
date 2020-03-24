@@ -1,20 +1,10 @@
 </$objtype/mkfile
 
-CC=pcc
+LIB=libutf8proc.$O.a
 OBJ=utf8proc.$O
-
-HFILES=../include/libutf8proc/utf8proc.h utf8proc_data.c
-
-CFLAGS=-D_BSD_EXTENSION -D_SUSV2_SOURCE -DUTF8PROC_EXPORTS -D_POSIX_SOURCE \
- -I ../include/libutf8proc -I ../../posix/include
-
-all:V:	libutf8proc.$O.a
-
-libutf8proc.$O.a: $OBJ $HFILES
-	ar rv libutf8proc.$O.a $OBJ
-
-%.$O:	%.c $HFILES
-	$CC $CFLAGS -c -o $target $stem.c
-
-clean:V:
-	rm -f $OBJ libutf8proc.$O.a
+HFILES=\
+	../include/libutf8proc/utf8proc.h\
+	utf8proc_data.c
+<../../nsport.mk
+CFLAGS=$CFLAGS -I../include/libutf8proc/
+<../../nsportlib.mk
